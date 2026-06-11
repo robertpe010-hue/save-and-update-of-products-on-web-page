@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Entity
 @Table(name = "producto_catalogo")
 public class Product {
     @Id

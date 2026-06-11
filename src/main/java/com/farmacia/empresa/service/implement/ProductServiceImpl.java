@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public void editarProducto(Product product) {
-
+        productRepository.save(product);
     }
 
     @Override
