@@ -43,39 +43,23 @@ public class ProductServiceImpl implements ProductService{
         ));
     }
 
-
     @Override
-    public void save(Product product) {
-        product.setEstaactivo(true);
+    public void crearProduct(Product product) {
         productRepository.save(product);
     }
 
     @Override
-    public Optional<Product> editarProduct(Long id) {
-        return productRepository.findById(id);
+    public void editarProducto(Product product) {
+
     }
 
     @Override
-    public void updateProduct(Product product) {
-        if (productRepository.existsById(product.getId())) {
-            productRepository.save(product);
-        } else {
-            throw new RuntimeException("No se puede actualizar, El producto no existe.");
-        }
+    public void desactivarProducto(Long id) {
+
     }
 
     @Override
-    public void desactivateProduct(Long id) {
-        productRepository.findById(id).ifPresent(product -> {
-            product.setEstaactivo(false);
-            productRepository.save(product);
-        });
-    }
-
-    @Override
-    public void deleteProduct(Long id) {
-        if (productRepository.existsById(id)) {
-            productRepository.deleteById(id);
-        }
+    public void borrarProducto(Long id) {
+        productRepository.deleteById(id);
     }
 }

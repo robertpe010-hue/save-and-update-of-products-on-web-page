@@ -10,10 +10,8 @@ public interface ProductService {
     List<ProductDTO> getProducts();
     Optional<ProductDTO> getProduct(Long id);
 
-    void save(Product product);
-    Optional<Product> editarProduct(Long id);
-    void updateProduct(Product product);
-    void desactivateProduct(Long id);
-    void deleteProduct(Long id);
-
+    void crearProduct(Product product);
+    void editarProducto(Product product);
+    void desactivarProducto(Long id);
+    void borrarProducto(Long id);
 }
