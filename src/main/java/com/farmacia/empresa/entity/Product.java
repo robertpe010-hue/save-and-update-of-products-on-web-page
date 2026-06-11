@@ -51,10 +51,10 @@ public class Product {
     private String subcategoriaweb;
 
     @Column(name = "imagen_url", nullable = false)
-    private String imageurl;
+    private String imagenurl;
 
     @Column(name = "esta_activo", nullable = false)
-    private String estaactivo;
+    private Boolean estaactivo;
 
 
 }
