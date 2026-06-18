@@ -19,22 +19,16 @@ public class UserWb {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "nombre", nullable = false)
     private String nombre;
-
     @Column(name = "apellido", nullable = false)
     private String apellido;
-
     @Column(name = "DNI", nullable = false)
     private String dni;
-
     @Column(name = "email", nullable = false)
     private String email;
-
     @Column(name = "Ncelular", nullable = false)
-    private String numerocellular;
-
+    private String numerocelular;
     @Column(name = "firstpassword", nullable = false)
     private String passwordNcrpt;
 
