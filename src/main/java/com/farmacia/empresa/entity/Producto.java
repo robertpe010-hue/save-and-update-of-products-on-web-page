@@ -53,7 +53,7 @@ public class Producto {
     private BigDecimal precioigv;
 
     @Column(name = "esta_activo", nullable = false)
-    private Boolean estadoactivo = true;
+    private Boolean estaActivo = true;
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ProductoLote> lotes;

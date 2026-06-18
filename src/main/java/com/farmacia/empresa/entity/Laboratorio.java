@@ -24,6 +24,6 @@ public class Laboratorio {
     private String nombre;
 
     @Column(name = "esta_activo", nullable = false)
-    private Boolean estaactivo;
+    private Boolean estaActivo = true;
 
 }

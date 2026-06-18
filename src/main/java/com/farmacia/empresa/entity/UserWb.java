@@ -32,5 +32,4 @@ public class UserWb {
     @Column(name = "firstpassword", nullable = false)
     private String passwordNcrpt;
 
-
 }

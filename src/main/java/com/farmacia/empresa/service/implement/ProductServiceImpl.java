@@ -64,7 +64,7 @@ public class ProductServiceImpl implements ProductoService {
                         dto.setCategoria(prod.getCategoria().getNombre());
 
                         dto.setPrecioigv(prod.getPrecioigv());
-                        dto.setEstaadoactivo(prod.getEstadoactivo());
+                        dto.setEstaadoactivo(prod.getEstaActivo());
                         return dto;
                     }).collect(Collectors.toList());
         }
@@ -89,7 +89,7 @@ public class ProductServiceImpl implements ProductoService {
             p.setLaboratorio(lab);
             p.setCategoria(cat);
 
-            p.setEstadoactivo(dto.getEstaactivo() != null ? dto.getEstaactivo() : true);
+            p.setEstaActivo(dto.getEstaactivo() != null ? dto.getEstaactivo() : true);
             return productoRepository.save(p);
         }
 
@@ -120,7 +120,7 @@ public class ProductServiceImpl implements ProductoService {
             }
 
             if(dtoActualizado.getEstaactivo() != null) {
-                p.setEstadoactivo(dtoActualizado.getEstaactivo());
+                p.setEstaActivo(dtoActualizado.getEstaactivo());
             }
             return productoRepository.save(p);
         }
@@ -129,7 +129,7 @@ public class ProductServiceImpl implements ProductoService {
         @Transactional
         public void desactivarProducto(Long idProducto) {
             Producto p = productoRepository.findById(idProducto).orElseThrow(() -> new RuntimeException("Producto no existe"));
-            p.setEstadoactivo(false);
+            p.setEstaActivo(false);
             productoRepository.save(p);
         }
 
@@ -138,7 +138,7 @@ public class ProductServiceImpl implements ProductoService {
         public void activarProducto(Long idProducto) {
             Producto p = productoRepository.findById(idProducto).orElseThrow(() -> new RuntimeException("Producto no existe"));
 
-            p.setEstadoactivo(true);
+            p.setEstaActivo(true);
             productoRepository.save(p);
         }
 
@@ -153,6 +153,7 @@ public class ProductServiceImpl implements ProductoService {
         public List<Laboratorio> listarLaboratoriosActivos() {
         return laboratorioRepository.findByEstaActivoTrue();
         }
+
         @Override
         @Transactional(readOnly = true)
         public List<Categoria> listarCategoriasActivas() {
